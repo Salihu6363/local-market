@@ -908,7 +908,7 @@ async function doForgot(e) {
   e.preventDefault();
   const email = fv(e.target, 'email').trim();
   if (!email) return false;
-  const r = await sbAuth('recover', { email });
+  const r = await sbAuth('recover', { email, redirectTo: window.location.origin + window.location.pathname });
   if (r.ok) toast('If that email is on an account, a reset link was sent.');
   else toast('Could not send a reset link. Ask the admin to reset your password in the Supabase dashboard.');
   return false;
