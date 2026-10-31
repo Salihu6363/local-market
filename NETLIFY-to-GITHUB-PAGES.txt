@@ -1,0 +1,32 @@
+HOW TO MOVE LOCAL MARKET FROM NETLIFY TO GITHUB PAGES (free, no badge)
+=======================================================================
+
+STEP 1 - Create the repo
+1. Go to https://github.com and sign up / log in (free).
+2. Click the + at the top right, then "New repository".
+3. Name it: local-market
+4. Keep it Public. Click "Create repository".
+
+STEP 2 - Upload the site files
+1. On the new repo page click "uploading an existing file" (or Add file > Upload files).
+2. Drag ALL the files in this folder (index.html, app.js, style.css, style2.css, style3.css, style4.css) - NOT this txt file, NOT security_fix.sql.
+3. Click "Commit changes".
+
+STEP 3 - Turn on GitHub Pages
+1. In the repo go to Settings > Pages.
+2. Under "Source" choose "Deploy from a branch", branch "main", folder "/ (root)". Save.
+3. Wait 1-2 minutes, refresh. Your link will show there, like:
+   https://YOUR-USERNAME.github.io/local-market/
+
+STEP 4 - Update Supabase (IMPORTANT or reset links break)
+1. Supabase dashboard > Authentication > URL Configuration.
+2. Site URL: change to your new github pages link (add it with no / at the end).
+3. Redirect URLs: add the same link, then Save.
+
+STEP 5 - Test
+1. Open your new github link, register a test account, request a password reset.
+2. Make sure the reset email link opens your github link.
+3. Once working you can delete the site from Netlify (Netlify dashboard > Site settings > Delete site).
+
+DONE - no Netlify badge, free hosting forever.
+If the CSS looks broken, make sure style.css, style2.css, style3.css and style4.css were all uploaded.

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOCAL MARKET</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="style3.css">
+<link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="row1">
+    <a href="#/" class="logo">LOCAL<span>MARKET</span></a>
+    <form class="search" onsubmit="return doSearch(event)">
+      <input id="q" name="q" placeholder="Search people and products"  autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="topnav">
+      <span id="authlinks" class="authlinks"></span>
+      <button id="themebtn" class="themebtn" type="button" onclick="toggleTheme()">🌙</button>
+      <a id="acct" href="#/login">Login</a>
+    </nav>
+  </div>
+  <nav class="bottomnav" id="bottomnav"></nav>
+  <div class="cats" id="catbar"></div>
+</header>
+
+<main id="view"></main>
+
+<footer>
+  <div>© 2026 LOCAL MARKET. All rights reserved.</div>
+  <div>A Salih Multipurpose Co Services service. Contact LOCAL MARKET support.</div>
+</footer>
+
+
+<div id="toast"></div>
+
+<script src="app.js"></script>
+<script>window.addEventListener('beforeunload',function(){if(typeof sbPush==='function'&&typeof db!=='undefined'&&db.session)sbPush();});</script>
+</body>
+</html>

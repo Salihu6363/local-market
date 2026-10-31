@@ -1,0 +1,38 @@
+/* v2 additions: reactions, gallery, follows, uploads */
+.reacts{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+.rbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:14px;cursor:pointer}
+.rbtn.on{border-color:var(--red);background:#fff0f1;color:var(--red);font-weight:600}
+.rbtn b{margin-left:2px}
+.thumbs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.thumbpic{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--line);cursor:pointer}
+.pthumb{position:relative;width:72px;height:72px}
+.pthumb img{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.pthumb button{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;border:0;background:var(--red);color:#fff;font-weight:700;cursor:pointer}
+.photobox{background:#fafafa;border:1px dashed #ccc;border-radius:10px;padding:12px}
+.photobox input[type=file]{margin-top:8px}
+.docprev,.admindoc{max-width:260px;width:100%;border-radius:8px;border:1px solid var(--line);margin:6px 0}
+.fstats{display:flex;gap:18px;margin:10px 0;font-size:15px}
+.fstats b{font-size:18px}
+.fbadge{background:#d7141f;color:#fff;border-radius:6px;padding:2px 6px;font-size:12px;font-weight:700;margin-left:4px}
+.warnbanner{background:#fff4d6;border:1px solid #e6b800;border-radius:10px;padding:10px 12px;margin:10px 0}
+
+/* login wall: logged-out visitors see only the branded login/register screen */
+body.loggedout .search, body.loggedout .topnav a[href="#/messages"] { display: none !important; }
+.brandwall { text-align: center; padding: 12px 0 4px; }
+.brandwall .logo { font-size: 28px; }
+
+.avwrap{position:relative;display:inline-flex}.odot{width:10px;height:10px;border-radius:50%;background:#bbb;display:inline-block;margin-left:6px;border:2px solid #fff}.odot.inl{width:8px;height:8px;border-width:1px}.odot.on{background:#22c55e}.sitedesc{font-size:15px;font-weight:600;line-height:1.45;color:#222;background:#fff7f5;border:1px solid #f3c1bd;border-radius:10px;padding:10px 12px;margin:10px 0}
+
+/* dark / light mode */
+:root{--bg:#f4f5f7;--card:#fff;--text:#17181c;--muted:#6b7280;--line:#e5e7eb}
+html[data-theme="dark"]{--bg:#0f1115;--card:#1a1d23;--text:#f2f3f5;--muted:#9aa1ad;--line:#2a2e37}
+body{background:var(--bg);color:var(--text)}
+.card,.convo,.auth,.page .tbl,.row,.empty,.stat,.hero{background:var(--card)!important;color:var(--text)}
+.muted{color:var(--muted)!important}
+.top{background:#8b0000}
+html[data-theme="dark"] .search input,html[data-theme="dark"] .cform input,html[data-theme="dark"] .cform textarea,html[data-theme="dark"] select{background:#12141a;color:var(--text);border-color:var(--line)}
+html[data-theme="dark"] .tbl th{background:#12141a}
+.themebtn{background:transparent;border:none;font-size:20px;cursor:pointer;margin-left:8px}
+html[data-theme="dark"] .logo span{color:#ff6b5e}
+
+body.loggedout #catbar { display: none !important; }

@@ -1,0 +1,155 @@
+/* ===== Facebook-style clone (light + dark) ===== */
+:root{--fb:#1877f2;--fbhover:#166fe5;--fbbg:#f0f2f5;--fbcard:#fff;--fbtext:#050505;--fbmuted:#65676b;--fbline:#ced0d4;--red:#1877f2;--dark:#1877f2;--dark2:#166fe5;--line:#ced0d4}
+body{background:var(--fbbg);color:var(--fbtext);font-family:Segoe UI,Helvetica,Arial,system-ui,sans-serif}
+a{color:var(--fb)}
+header.top{background:var(--fb);box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.row1{padding:8px 12px;gap:12px}
+.logo{background:transparent;color:#fff;font-size:22px;font-weight:800;padding:4px 6px;border-radius:0}
+.logo span{font-weight:700}
+.search{flex:0 1 260px;min-width:140px}
+.search input{background:#fff;border-radius:20px;padding:9px 14px;color:#050505}
+.search button{background:#e4e6eb;color:#050505;border-radius:0 20px 20px 0;font-weight:600}
+.topnav a{color:#fff;font-weight:600}
+.topnav b,.fbadge{background:#e41e3f}
+.cats{background:var(--fb)}
+.hero{background:var(--fbcard);color:var(--fbtext);border-radius:8px;margin:12px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.hero h1{color:var(--fbtext);font-size:24px}
+.hero p{color:var(--fbmuted)}
+.hero .btn.ghost{color:var(--fb);border-color:var(--fb);background:#fff}
+.btn{background:var(--fb);border-radius:6px;font-weight:600;padding:9px 16px}
+.btn:hover{background:var(--fbhover);filter:none}
+.btn.ghost{background:#e4e6eb;color:var(--fbtext);border:0}
+.btn.ghost:hover{background:#d8dadf}
+.btn.small{padding:7px 12px;font-size:14px;margin-top:6px;width:100%}
+.sec{background:var(--fbcard);border-radius:8px 8px 0 0;padding:12px 16px 4px;margin:12px 12px 0;box-shadow:0 1px 2px rgba(0,0,0,.1);font-weight:700;color:var(--fbtext)}
+p.sec{background:var(--fbcard);padding:0 16px 10px;margin:0 12px;border-radius:0 0 8px 8px;box-shadow:0 1px 2px rgba(0,0,0,.1);font-weight:400}
+.sec small{color:var(--fbmuted)}
+.mtabs{display:flex;gap:8px;margin:12px;padding:6px;background:var(--fbcard);border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.mtabs a{background:#e4e6eb;color:var(--fbtext);border:0;border-radius:999px;font-weight:600;padding:9px 12px;flex:1}
+.mtabs a.on{background:#e7f3ff;color:var(--fb)}
+.grid{padding:12px}
+.card{background:var(--fbcard);border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.12);color:var(--fbtext)}
+.convo,.auth,.empty,.row,.stat{background:var(--fbcard);border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.1);margin:8px 12px;padding:12px;border:0}
+.page h1{font-size:24px;margin:14px 12px 0;color:var(--fbtext)}
+.muted,.sec small{color:var(--fbmuted)!important}
+input,select,textarea{border:1px solid var(--fbline);border-radius:20px;background:#f0f2f5;color:var(--fbtext)}
+.bottomnav{background:var(--fbcard);box-shadow:0 -1px 3px rgba(0,0,0,.1)}
+.bottomnav a.on{color:var(--fb)}
+footer{color:var(--fbmuted)}
+/* horizontal suggested-friend cards */
+.hscroll{display:flex;gap:10px;overflow-x:auto;padding:12px;background:var(--fbcard);margin:0 12px;border-radius:0 0 8px 8px;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.fbcard{flex:0 0 160px;background:var(--fbcard);border:1px solid var(--fbline);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.fbcard-pic{display:block;height:130px;background:#e4e6eb}
+.fbcard-pic img{width:100%;height:100%;object-fit:cover;display:block}
+.fbcard-ph{height:100%;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:var(--fbmuted)}
+.fbcard-body{padding:8px;display:flex;flex-direction:column;gap:2px;font-size:14px}
+.fbcard-body a{text-decoration:none;color:var(--fbtext)}
+/* dark mode: Facebook dark equivalent */
+html[data-theme="dark"]{--fbbg:#18191a;--fbcard:#242526;--fbtext:#e4e6eb;--fbmuted:#b0b3b8;--fbline:#3e4042;--line:#3e4042;--fb:#2d88ff;--fbhover:#4c9dff}
+html[data-theme="dark"] header.top,html[data-theme="dark"] .cats{background:#242526;box-shadow:0 1px 2px rgba(0,0,0,.5)}
+html[data-theme="dark"] .logo{color:#2d88ff}
+html[data-theme="dark"] .search input{background:#3a3b3c;color:#e4e6eb}
+html[data-theme="dark"] .search button{background:#4e4f50;color:#e4e6eb}
+html[data-theme="dark"] .topnav a{color:#e4e6eb}
+html[data-theme="dark"] .btn.ghost,html[data-theme="dark"] .mtabs a{background:#3a3b3c;color:#e4e6eb}
+html[data-theme="dark"] .mtabs a.on{background:#263951;color:#2d88ff}
+html[data-theme="dark"] .hero .btn.ghost{background:#3a3b3c;color:#2d88ff;border-color:#2d88ff}
+html[data-theme="dark"] .fbcard-pic,html[data-theme="dark"] .thumb{background:#3a3b3c}
+html[data-theme="dark"] .bottomnav{background:#242526}
+
+/* top bar: distinct links, wrap cleanly on small phones */
+.topnav{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:flex-end;max-width:100%}
+.topnav .tn-link{white-space:nowrap;padding:4px 2px}
+@media (max-width:480px){.topnav{gap:6px 10px;font-size:13px}.topnav .tn-link{padding:2px 0}}
+.fpost{background:#1b1f2a;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:8px;margin:8px 0}
+.fphead{display:flex;gap:8px;align-items:center;margin-bottom:4px;font-size:13px}
+.fpcap{margin:4px 0;white-space:pre-wrap;font-size:13px}
+.fpost img.bigphoto{width:100%;max-height:200px;object-fit:cover;border-radius:8px}
+.fpbody{margin:4px 0 2px;font-size:13px}
+.fptitle{font-weight:700;font-size:14px}
+.fpstat{font-size:12px;margin:4px 0}
+.fpact{display:flex;gap:4px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:6px}
+.fpbtn{background:none;border:1px solid rgba(255,255,255,.12);color:inherit;border-radius:16px;padding:3px 8px;font-size:12px;cursor:pointer}
+.fpbtn.on{background:#2d3f7a}
+.fpcform{display:flex;gap:4px;margin-top:6px}
+.fpcform input{flex:1;padding:6px 8px;font-size:13px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:transparent;color:inherit}
+.fpost .cmt{font-size:12px;margin-top:4px}
+@media (max-width:480px){.fpost{padding:6px;margin:6px 0}.fpost img.bigphoto{max-height:170px}}
+.fpost .av{width:30px!important;height:30px!important;font-size:12px!important}
+@media (max-width:480px){.fpost img.bigphoto{max-height:120px}.fpost .fpact .fpbtn{padding:2px 7px}}
+
+/* top navbar tabs: sticky under the header, FB-style */
+header.top{position:sticky;top:0;z-index:50}
+.bottomnav{position:sticky;top:0;z-index:49;display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:8px;padding:10px 12px;margin:0;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.12);overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:1px solid #e4e6eb}
+.bottomnav::-webkit-scrollbar{display:none}
+.bottomnav a{display:flex;align-items:center;gap:6px;flex:0 0 auto;min-height:40px;min-width:72px;justify-content:center;padding:9px 18px;margin:0;background:#e4e6eb;color:#1c1e21;font-size:14px;font-weight:600;line-height:1.2;white-space:nowrap;text-decoration:none;border-radius:999px;transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .15s ease}
+.bottomnav a .i{display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;margin:0}
+.bottomnav a:hover{background:#d8dadf;transform:translateY(-1px)}
+.bottomnav a.on{background:var(--fb);color:#fff;box-shadow:0 2px 8px rgba(24,119,242,.35)}
+.bottomnav a.on:hover{background:var(--fb);filter:brightness(1.05)}
+.bottomnav .fbadge{position:static;margin-left:2px}
+html[data-theme="dark"] .bottomnav{background:#242526;border-bottom-color:#3e4042;box-shadow:0 2px 6px rgba(0,0,0,.5)}
+html[data-theme="dark"] .bottomnav a{background:#3a3b3c;color:#e4e6eb}
+html[data-theme="dark"] .bottomnav a:hover{background:#4e4f50}
+html[data-theme="dark"] .bottomnav a.on{background:#2d88ff;color:#fff}
+@media (max-width:480px){.bottomnav{gap:6px;padding:8px}.bottomnav a{min-width:0;min-height:38px;padding:8px 14px;font-size:13px;gap:4px}.bottomnav a .i{font-size:15px}}
+body{padding-bottom:0}
+
+/* header v2: brand left, search centered, icons right; heavy FB-style logo */
+header.top .row1{display:flex;align-items:center;gap:12px;justify-content:space-between}
+header.top .logo{font-weight:900;font-size:20px;letter-spacing:-.5px;text-transform:uppercase;color:#fff;text-decoration:none;flex:0 0 auto;white-space:nowrap}
+header.top .logo span{font-weight:900}
+header.top .search{flex:1 1 280px;max-width:420px;margin:0 auto;justify-content:center}
+header.top .topnav{flex:0 0 auto;display:flex;align-items:center;gap:8px}
+@media (max-width:640px){
+  header.top .row1{flex-wrap:wrap}
+  header.top .logo{order:1}
+  header.top .topnav{order:2;margin-left:auto}
+  header.top .search{order:3;flex:1 1 100%;max-width:none;margin:0}
+}
+
+/* count badges: red circle on bell, count pill on Inbox */
+.topnav .tn-link{position:relative}
+.topnav .fbadge{position:absolute;top:-6px;right:-10px;margin:0;min-width:18px;height:18px;padding:0 5px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;line-height:1;background:#e41e3f;color:#fff;border:2px solid #fff;box-sizing:border-box}
+.topnav .fbadge[hidden]{display:none}
+
+/* follow confirmation pop */
+.fpop-wrap{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px}
+.fpop-wrap:empty{display:none}
+.fpop-card{background:var(--fbcard);color:var(--fbtext);border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.25);padding:24px 20px 18px;width:100%;max-width:300px;text-align:center}
+.fpop-check{width:56px;height:56px;margin:0 auto 12px;border-radius:50%;background:var(--fb);color:#fff;font-size:30px;line-height:56px;font-weight:700}
+.fpop-msg{margin:0 0 16px;font-size:16px;font-weight:600}
+.fpop-ok{min-width:120px}
+html[data-theme="dark"] .fpop-card{background:#242526;color:#e4e6eb}
+
+/* compact feed (v4) */
+.fpost{padding:6px;margin:6px 0}
+.fpost .fphead{margin-bottom:2px;font-size:12px;white-space:nowrap}
+.fpost .fphead .muted{font-size:11px}
+.fpost .fpcap{font-size:12px;margin:2px 0}
+.fpost img.bigphoto,.fpost .bigphoto{width:100%!important;height:150px!important;max-height:150px!important;object-fit:contain!important;background:#f5f5f5;border-radius:8px;display:block}
+@media (max-width:480px){.fpost img.bigphoto,.fpost .bigphoto{height:130px!important;max-height:130px!important}}
+.fpost .fptitle{font-size:13px}
+.fpost .fpstat{font-size:11px}
+.fpost .fpact{padding-top:4px}
+.fpost .fpbtn{padding:2px 7px;font-size:11px}
+.fpcform{display:flex!important;gap:4px}
+.pymk{background:#1b1f2a;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:8px;margin:8px 0}
+.pymk-h{font-weight:700;font-size:14px;margin-bottom:6px}
+.pymk-row{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:13px}
+.pymk-row .av{width:36px!important;height:36px!important;font-size:14px!important;flex:none}
+.pymk-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.pymk-row .btn.small{padding:4px 10px;font-size:12px}
+
+/* narrow centered feed column (v5) */
+.fpost{max-width:400px;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box}
+.fpost img.bigphoto,.fpost .bigphoto{width:100%!important;max-width:100%!important;height:auto!important;max-height:300px!important;object-fit:contain!important;background:#f5f5f5;display:block;margin:0 auto}
+@media (max-width:480px){.fpost img.bigphoto,.fpost .bigphoto{max-height:280px!important}}
+
+/* photo frame sized to a modest centered box (v5b) */
+.fpost img.bigphoto,.fpost .bigphoto{width:auto!important;max-width:280px!important;height:auto!important;max-height:280px!important;min-height:0!important;margin:0 auto!important;object-fit:contain!important;background:transparent!important;border-radius:8px}
+.fpost{max-width:340px}
+
+/* v6: FB-style full-bleed product photo, fills the card edge to edge, no empty bars */
+.fpost img.bigphoto,.fpost .bigphoto{display:block!important;width:calc(100% + 12px)!important;max-width:calc(100% + 12px)!important;height:auto!important;max-height:360px!important;min-height:0!important;margin:-6px -6px 6px -6px!important;object-fit:cover!important;object-position:center!important;background:#e4e6eb!important;border-radius:0!important}
+.fpost{padding:6px}
